@@ -89,3 +89,18 @@ footer span{
     }
   }
 }
+
+
+// full cover content center
+.fullcover{
+  background-color:$alert-color;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .fullcover-content{
+    background-color: $dark-gray;
+  }
+
+}
