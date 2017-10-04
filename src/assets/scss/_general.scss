@@ -1,7 +1,12 @@
 .fuckred{background-color: red;}
-footer{
 
- span{
+.break{
+  width:100%;
+  min-height: 1rem;
+  background-color: $dark-gray;
+}
+
+footer span{
   color: darken(red, 5%);
   position:relative;
   &:after{
@@ -18,14 +23,69 @@ footer{
     }
    }
  }
-}
+
 .footer{
   width:100%;
   div:first-child{float:left;}
 }
-
-.break{
-  width:100%;
-  min-height: 1rem;
-  background-color: $dark-gray;
+//
+.desdev{
+  position:fixed;
+  bottom:-0.5em;
+  right: 1em;
+  width: 1em;
+  transition: width 0.1s linear 2s;
+  text-align: right;
+  display: inline-block;
+  .textbox{
+    display: inline-block;
+    width: 30rem;
+    overflow-x: hidden;
+    margin:1rem -1rem;
+    p{
+      margin-bottom:0;
+     position:relative;
+     z-index: -1;
+     transform: translateX(21em);
+     animation-name: popdown;
+     animation-duration: 2s;
+    //  animation-delay: 0.5s;
+     animation-iteration-count: 1;
+     animation-fill-mode: forwards;
+     @keyframes popdown {
+       0% {
+         transform: translateX(-1em);
+       }
+       100% {
+        transform: translateX(21em);
+       }
+       }
+    }
+  }
+  a{
+  font-size:1.2rem;
+  position:relative;
+  display: inline-block;
+  width: 1rem;
+  bottom:1.3rem;
+  }
+  &:hover {
+    width: 30rem;
+    transition: width 0s linear 0s;
+    > .textbox p{
+     animation-name: popup;
+     animation-duration: 2s;
+     animation-delay: 0.2s;
+     animation-iteration-count: 1;
+     animation-fill-mode: forwards;
+     @keyframes popup {
+       0% {
+           transform: translateX(21em);
+       }
+       100% {
+           transform: translateX(-1em);
+       }
+       }
+    }
+  }
 }
